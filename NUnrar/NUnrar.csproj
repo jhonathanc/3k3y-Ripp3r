@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10A689CF-76A2-4A4F-96E4-553C33398438}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUnrar</RootNamespace>
+    <AssemblyName>NUnrar</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\k3y.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Archive\RarArchiveVolume.cs" />
+    <Compile Include="Archive\StreamRarArchiveVolume.cs" />
+    <Compile Include="Common\ExtractOptions.cs" />
+    <Compile Include="ConsoleRarExtractionListener.cs" />
+    <Compile Include="Exceptions\RarException.cs" />
+    <Compile Include="Headers\FileNameDecoder.cs" />
+    <Compile Include="Headers\FlagUtility.cs" />
+    <Compile Include="Exceptions\InvalidRarFormatException.cs" />
+    <Compile Include="IO\ReadOnlySubStream.cs" />
+    <Compile Include="IO\StreamingMode.cs" />
+    <Compile Include="Common\IRarExtractionListener.cs" />
+    <Compile Include="Exceptions\MultipartStreamRequiredException.cs" />
+    <Compile Include="LazyReadOnlyCollection.cs" />
+    <Compile Include="NullRarExtractionListener.cs" />
+    <Compile Include="Archive\RarArchive.Extensions.cs" />
+    <Compile Include="Archive\RarArchiveEntry.Extensions.cs" />
+    <Compile Include="Archive\RarArchiveEntry.cs" />
+    <Compile Include="Exceptions\RarExtractionException.cs" />
+    <Compile Include="Common\RarEntry.cs" />
+    <Compile Include="Common\RarOptions.cs" />
+    <Compile Include="Reader\MultiVolumeRarReader.cs" />
+    <Compile Include="Reader\RarReader.cs" />
+    <Compile Include="Reader\RarReader.Extensions.cs" />
+    <Compile Include="Reader\RarReaderEntry.cs" />
+    <Compile Include="Archive\SeekableStreamFilePart.cs" />
+    <Compile Include="Reader\SingleVolumeRarReader.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Compile Include="Archive\FileInfoRarFilePart.cs" />
+    <Compile Include="Archive\FileInfoRarArchiveVolume.cs" />
+    <Compile Include="Common\RarFilePart.cs" />
+    <Compile Include="Headers\AVHeader.cs" />
+    <Compile Include="Headers\CommentHeader.cs" />
+    <Compile Include="Headers\EndArchiveHeader.cs" />
+    <Compile Include="Headers\SignHeader.cs" />
+    <Compile Include="Common\RarVolume.cs" />
+    <Compile Include="Unpack\UnpackUtility.cs" />
+    <Compile Include="Archive\RarArchive.cs" />
+    <Compile Include="IO\MultiVolumeStream.cs" />
+    <Compile Include="Unpack\RarCRC.cs" />
+    <Compile Include="Headers\FileHeader.cs" />
+    <Compile Include="Headers\ArchiveHeader.cs" />
+    <Compile Include="Headers\RarHeader.cs" />
+    <Compile Include="IO\MarkingBinaryReader.cs" />
+    <Compile Include="Headers\NewSubHeader.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Headers\RarHeaderFactory.cs" />
+    <Compile Include="Headers\Flags.cs" />
+    <Compile Include="Unpack\Decode\AudioVariables.cs" />
+    <Compile Include="Unpack\Decode\BitDecode.cs" />
+    <Compile Include="Unpack\Decode\CodeType.cs" />
+    <Compile Include="Unpack\Decode\Compress.cs" />
+    <Compile Include="Unpack\Decode\Decode.cs" />
+    <Compile Include="Unpack\Decode\DistDecode.cs" />
+    <Compile Include="Unpack\Decode\FilterType.cs" />
+    <Compile Include="Unpack\Decode\LitDecode.cs" />
+    <Compile Include="Unpack\Decode\LowDistDecode.cs" />
+    <Compile Include="Unpack\Decode\MultDecode.cs" />
+    <Compile Include="Unpack\Decode\RepDecode.cs" />
+    <Compile Include="Unpack\PPM\BlockTypes.cs" />
+    <Compile Include="Unpack\PPM\FreqData.cs" />
+    <Compile Include="Unpack\PPM\ModelPPM.cs" />
+    <Compile Include="Unpack\PPM\Pointer.cs" />
+    <Compile Include="Unpack\PPM\PPMContext.cs" />
+    <Compile Include="Unpack\PPM\RangeCoder.cs" />
+    <Compile Include="Unpack\PPM\RarMemBlock.cs" />
+    <Compile Include="Unpack\PPM\RarNode.cs" />
+    <Compile Include="Unpack\PPM\SEE2Context.cs" />
+    <Compile Include="Unpack\PPM\State.cs" />
+    <Compile Include="Unpack\PPM\StateRef.cs" />
+    <Compile Include="Unpack\PPM\SubAllocator.cs" />
+    <Compile Include="Unpack\Unpack.cs" />
+    <Compile Include="Unpack\Unpack15.cs" />
+    <Compile Include="Unpack\Unpack20.cs" />
+    <Compile Include="Unpack\UnpackFilter.cs" />
+    <Compile Include="Unpack\VM\BitInput.cs" />
+    <Compile Include="Unpack\VM\RarVM.cs" />
+    <Compile Include="Unpack\VM\VMCmdFlags.cs" />
+    <Compile Include="Unpack\VM\VMCommands.cs" />
+    <Compile Include="Unpack\VM\VMFlags.cs" />
+    <Compile Include="Unpack\VM\VMOpType.cs" />
+    <Compile Include="Unpack\VM\VMPreparedCommand.cs" />
+    <Compile Include="Unpack\VM\VMPreparedOperand.cs" />
+    <Compile Include="Unpack\VM\VMPreparedProgram.cs" />
+    <Compile Include="Unpack\VM\VMStandardFilters.cs" />
+    <Compile Include="Unpack\VM\VMStandardFilterSignature.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Headers\MarkHeader.cs" />
+    <Compile Include="Archive\RarArchiveVolumeFactory.cs" />
+    <Compile Include="Reader\NonSeekableStreamFilePart.cs" />
+    <Compile Include="Reader\RarReaderVolume.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\k3y.snk">
+      <Link>k3y.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

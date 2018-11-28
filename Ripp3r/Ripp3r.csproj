@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20D9586E-548C-43AE-B1D2-FF64BE29A8D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ripp3r</RootNamespace>
+    <AssemblyName>Ripp3r</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ripp3r.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;IONIC</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;IONIC</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\k3y.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CompilerServices.AsyncTargetingPack.Net4">
+      <HintPath>..\References\Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Controls\FolderDialogExtension.cs" />
+    <Compile Include="Controls\Hex\Cache.cs" />
+    <Compile Include="Controls\Hex\HexControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Hex\Range.cs" />
+    <Compile Include="Controls\ITaskbarList4.cs" />
+    <Compile Include="Controls\ListViewHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShowException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ShowException.Designer.cs">
+      <DependentUpon>ShowException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UnhandledExceptionDlg.cs" />
+    <Compile Include="Controls\UnhandledExDlgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\UnhandledExDlgForm.Designer.cs">
+      <DependentUpon>UnhandledExDlgForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WaterEffectControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TaskbarManager.Native.cs" />
+    <Compile Include="Controls\TaskbarManager.cs" />
+    <Compile Include="FormsInteraction.cs" />
+    <Compile Include="Int32Textbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IrdViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IrdViewer.Designer.cs">
+      <DependentUpon>IrdViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses.Designer.cs">
+      <DependentUpon>Licenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyAbout.Designer.cs">
+      <DependentUpon>MyAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PublicKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicKey.Designer.cs">
+      <DependentUpon>PublicKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ripp3rSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ripp3rSettings.Designer.cs">
+      <DependentUpon>Ripp3rSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.Partial.cs" />
+    <EmbeddedResource Include="Controls\ShowException.resx">
+      <DependentUpon>ShowException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UnhandledExDlgForm.resx">
+      <DependentUpon>UnhandledExDlgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IrdViewer.resx">
+      <DependentUpon>IrdViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses.resx">
+      <DependentUpon>Licenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAbout.resx">
+      <DependentUpon>MyAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PublicKey.resx">
+      <DependentUpon>PublicKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ripp3rSettings.resx">
+      <DependentUpon>Ripp3rSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\k3y.snk">
+      <Link>k3y.snk</Link>
+    </None>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\button_cancel_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_small %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\close.png" />
+    <Resource Include="Resources\maximize.png" />
+    <Resource Include="Resources\minimize.png" />
+    <Resource Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Licenses.html" />
+    <Content Include="Resources\About.png" />
+    <Content Include="Resources\CreateISO.png" />
+    <Content Include="Resources\Crypto.png" />
+    <None Include="Resources\Eject.png" />
+    <Content Include="Resources\IRDFile.png" />
+    <Content Include="Resources\Keys.png" />
+    <Content Include="Resources\Logo.ico" />
+    <Content Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiscUtils\DiscUtils.csproj">
+      <Project>{DBB340F9-2386-43C2-A473-FA496CBE07A4}</Project>
+      <Name>DiscUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ripp3r.k3y\Ripp3r.k3y.csproj">
+      <Project>{E986206D-95AC-45AC-9B84-A8184E781ACB}</Project>
+      <Name>Ripp3r.k3y</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
